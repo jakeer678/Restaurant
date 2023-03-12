@@ -19,10 +19,25 @@
     height: 25rem;
     z-index: 0;
     overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
   }
   .main-image img {
     width: 110%;
     height: 100%;
     object-fit: cover;
     transform: rotateZ(-5deg) translateY(-4rem) translateX(-1rem);
+  }
+  .main_1 {
+    position: relative;
+  top: 0;
+  left: 0;
+  border: 1px solid #000000;
+  }
+  .main_2 {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    border: 1px solid #000000;
   }
