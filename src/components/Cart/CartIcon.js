@@ -1,10 +1,10 @@
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import { Fragment } from "react";
 
-const CartIcon = () => {
+const CartIcon = (props) => {
   return (
     <Fragment>
-      <ShoppingBasketIcon />
+      <ShoppingBasketIcon on />
     </Fragment>
   );
 };
