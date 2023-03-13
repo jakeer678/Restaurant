@@ -1,6 +1,6 @@
-import React from 'react'
-import Header from './components/Layout/Header'
-import Meals from './components/Meals/Meals'
+import React from "react";
+import Header from "./components/Layout/Header";
+import Meals from "./components/Meals/Meals";
 
 const App = () => {
   return (
@@ -10,7 +10,7 @@ const App = () => {
         <Meals />
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

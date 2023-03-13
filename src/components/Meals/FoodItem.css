@@ -1,0 +1,32 @@
+.item {
+    margin: auto;
+    width: 58rem;
+    padding: 10px;
+    border-radius: 1rem;
+    background-color: white;
+    list-style:none;
+    margin-top: 1.8rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    
+}
+.first_list {
+    font-weight: bold;
+    margin-left: 2rem;
+    line-height: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top:1rem;
+}
+.second_list {
+    margin-left: 2rem;
+    font-size: 0.9rem;
+    line-height: 20px;
+    font-family:Arial, Helvetica, sans-serif
+}
+.third_list {
+    margin-left: 2rem;
+    color: brown;
+    font-weight: 600;
+    border-bottom: 1px solid rgb(223, 215, 215);
+    line-height: 1.8rem;
+
+}
