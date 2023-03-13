@@ -6,7 +6,7 @@ const Form = () => {
     <Fragment>
       <div className="input_enter">
         <label>Amount</label>
-        <input type="number" step="1" min="1" max="5" defaultValue="1" />
+        <input type="number" min="1" max="5" defaultValue="1" />
       </div>
       <div className="add_button">
         <button type="submit">+Add</button>
