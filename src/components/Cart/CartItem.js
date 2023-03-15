@@ -5,19 +5,22 @@ const CartItem = (props) => {
 
   return (
     <li className="cart-item">
-      <di>
-        <p>{props.name}</p>
-        <div>{props.origin}</div>
-        <div className="summary">
-          <span className="price">${price}</span>
-          <span className="amount">x {props.amount}</span>
-        </div>
+      <div>
+        <div className="item_price">
+          <div>
+            <img className="image_first" src={props.image} alt="imag" />
+            <div>{props.name}</div>
+            <span className="price">${price}</span>
+            <span className="amount">x {props.amount}</span>
+            <div>{props.origin}</div>
+          </div>
 
-        <div className="actions">
-          <button onClick={props.onRemove}>−</button>
-          <button onClick={props.onAdd}>+</button>
+          <div className="actions">
+            <button onClick={props.onRemove}>−</button>
+            <button onClick={props.addItem}>+</button>
+          </div>
         </div>
-      </di>
+      </div>
     </li>
   );
 };

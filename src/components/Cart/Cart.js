@@ -5,15 +5,15 @@ import itemContext from "../store/ContexStore";
 import CartItem from "./CartItem";
 
 const Cart = () => {
-  const { showCart, setShowCart } = useContext(itemContext);
+  const { showCart, setShowCart, removeItem, addItem } =
+    useContext(itemContext);
 
   const cartCtx = useContext(itemContext);
 
-  const Total = `${cartCtx.totalAmount?.toFixed(2)}`;
+  const Total = cartCtx.items.reduce((acc, cur) => {
+    return acc + cur.price;
+  }, 0);
 
-  const cartItemRemoveHandler = (id) => {
-    cartCtx.removeItem(id);
-  };
   const handlePopUp = () => {
     setShowCart(false);
   };
@@ -21,11 +21,14 @@ const Cart = () => {
     <ul className="cart-items">
       {cartCtx.items.map((item) => (
         <CartItem
-          key={item.id}
-          name={item.name}
-          amount={item.quantity}
-          price={item.price}
-          onRemove={cartItemRemoveHandler.bind(null, item.id)}
+          key={item?.id}
+          name={item?.name}
+          amount={item?.quantity}
+          origin={item?.origin}
+          image={item?.image}
+          price={item?.price}
+          onRemove={() => removeItem(item.id)}
+          addItem={() => addItem(item)}
         />
       ))}
     </ul>

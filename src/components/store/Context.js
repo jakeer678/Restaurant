@@ -34,7 +34,8 @@ const [items, updateItems] = useState([])
   };
 
   const removeItemHandler = (Id) => {
-   
+    const filterItem = items.filter((item)=>item.id!==Id)
+    updateItems(filterItem)
   };
 
   const cartContext = {

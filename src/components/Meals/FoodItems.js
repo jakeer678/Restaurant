@@ -7,7 +7,7 @@ const FoodItems = (props) => {
   return (
     <Card>
       {items?.map((item) => (
-        <div className="list" key={item.id}>
+        <div className="list" key={item.name}>
           <div>
             <img src={item?.image} className="image_1" alt="burgar" />
 
@@ -17,6 +17,7 @@ const FoodItems = (props) => {
           </div>
           <div className="form">
             <Form id={item.id} item={item} />
+            {console.log(item, "kkkkkkkk")}
           </div>
         </div>
       ))}
