@@ -1,22 +1,23 @@
-import React from "react";
 import "./CartItem.css";
 
 const CartItem = (props) => {
-  const price = `$${props.price?.toFixed(2)}`;
+  const price = `${props.price?.toFixed(2)}`;
 
   return (
     <li className="cart-item">
-      <>
-        <h2>{props.name}</h2>
+      <di>
+        <p>{props.name}</p>
+        <div>{props.origin}</div>
         <div className="summary">
-          <span className="price">{price}</span>
+          <span className="price">${price}</span>
           <span className="amount">x {props.amount}</span>
         </div>
-      </>
-      <div className="actions">
-        <button onClick={props.onRemove}>−</button>
-        <button onClick={props.onAdd}>+</button>
-      </div>
+
+        <div className="actions">
+          <button onClick={props.onRemove}>−</button>
+          <button onClick={props.onAdd}>+</button>
+        </div>
+      </di>
     </li>
   );
 };

@@ -8,15 +8,15 @@ const Cart = () => {
   const { showCart, setShowCart } = useContext(itemContext);
 
   const cartCtx = useContext(itemContext);
+
   const Total = `${cartCtx.totalAmount?.toFixed(2)}`;
 
-  // const cartItemRemoveHandler = (id) => {
-  //   cartCtx.removeItem(id);
-  // };
+  const cartItemRemoveHandler = (id) => {
+    cartCtx.removeItem(id);
+  };
   const handlePopUp = () => {
     setShowCart(false);
   };
-
   const cartItem = (
     <ul className="cart-items">
       {cartCtx.items.map((item) => (
@@ -25,7 +25,7 @@ const Cart = () => {
           name={item.name}
           amount={item.quantity}
           price={item.price}
-          // onRemove={cartItemRemoveHandler.bind(null, item.id)}
+          onRemove={cartItemRemoveHandler.bind(null, item.id)}
         />
       ))}
     </ul>
@@ -34,18 +34,16 @@ const Cart = () => {
   return (
     showCart && (
       <Modal>
-        <div className="cart-item">
-         <div>{cartItem}</div>
-          <div className="total">
-            <span>Total Amount</span>
-            <span>${Total}</span>
-          </div>
-          <div className="actions">
-            <button className="button_clo" onClick={handlePopUp}>
-              Close
-            </button>
-            <button className="button_ord">Order</button>
-          </div>
+        {cartItem}
+        <div className="total">
+          <span>Total Amount</span>
+          <span>${Total}</span>
+        </div>
+        <div className="actions">
+          <button className="button_clo" onClick={handlePopUp}>
+            Close
+          </button>
+          <button className="button_ord">Order</button>
         </div>
       </Modal>
     )

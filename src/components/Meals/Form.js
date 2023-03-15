@@ -14,23 +14,23 @@ const Form = (props) => {
 
   return (
     <Fragment>
-      <div className="input_enter">
-        <Input
-          label="Amount"
-          input={{
-            id: "amount_" + props.id,
-            type: "number",
-            min: "1",
-            max: "5",
-            defaultValue: "1",
-          }}
-        />
-      </div>
-      <div className="add_button">
-        <button type="submit" onClick={handleAddItems}>
-          +Add
-        </button>
-      </div>
+      <form onSubmit={handleAddItems}>
+        <div className="input_enter">
+          <Input
+            label="Amount"
+            input={{
+              id: "amount_" + props.id,
+              type: "number",
+              min: "1",
+              max: "5",
+              defaultValue: "1",
+            }}
+          />
+        </div>
+        <div className="add_button">
+          <button type="submit">+Add</button>
+        </div>
+      </form>
     </Fragment>
   );
 };
