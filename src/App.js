@@ -1,15 +1,24 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import Cart from "./components/Cart/Cart";
 import Header from "./components/Layout/Header";
 import Meals from "./components/Meals/Meals";
+// import items from "./components/Meals/Items";
+import { CartProvider } from "./components/store/Context";
 
-export const itemContext = React.createContext(null);
+
 
 const App = () => {
-  const [showCart, setShowCart] = useState(false);
+  // const [showCart, setShowCart] = useState(false);
+
+  // const [cartItems, setCartItems] = useState(items);
+
+  // const addToCartItems = () => {
+  //   setCartItems();
+  // };
+
   return (
     <Fragment>
-      <itemContext.Provider value={{ showCart, setShowCart }}>
+      <CartProvider>
         <Cart />
 
         <Header />
@@ -17,7 +26,7 @@ const App = () => {
         <main>
           <Meals />
         </main>
-      </itemContext.Provider>
+      </CartProvider>
     </Fragment>
   );
 };

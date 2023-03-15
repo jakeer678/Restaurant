@@ -1,28 +1,44 @@
 import Modal from "../UI/Modal";
 import React, { useContext } from "react";
 import "./Cart.css";
-import { itemContext } from "../../App";
+import itemContext from "../store/ContexStore";
+import CartItem from "./CartItem";
 
-const Cart = (props) => {
+const Cart = () => {
   const { showCart, setShowCart } = useContext(itemContext);
-  const cartItems = [{ id: 1, name: "Chicken-Burgar", amount: 2, price: 22 }];
 
+  const cartCtx = useContext(itemContext);
+  const Total = `${cartCtx.totalAmount?.toFixed(2)}`;
+
+  // const cartItemRemoveHandler = (id) => {
+  //   cartCtx.removeItem(id);
+  // };
   const handlePopUp = () => {
     setShowCart(false);
   };
+
+  const cartItem = (
+    <ul className="cart-items">
+      {cartCtx.items.map((item) => (
+        <CartItem
+          key={item.id}
+          name={item.name}
+          amount={item.quantity}
+          price={item.price}
+          // onRemove={cartItemRemoveHandler.bind(null, item.id)}
+        />
+      ))}
+    </ul>
+  );
 
   return (
     showCart && (
       <Modal>
         <div className="cart-item">
-          {cartItems?.map((item) => (
-            <div key={item?.id}>
-              <div>{item?.name}</div>
-            </div>
-          ))}
+         <div>{cartItem}</div>
           <div className="total">
             <span>Total Amount</span>
-            <span>28</span>
+            <span>${Total}</span>
           </div>
           <div className="actions">
             <button className="button_clo" onClick={handlePopUp}>

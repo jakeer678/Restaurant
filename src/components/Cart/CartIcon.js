@@ -4,7 +4,7 @@ import { Fragment } from "react";
 const CartIcon = (props) => {
   return (
     <Fragment>
-      <ShoppingBasketIcon on />
+      <ShoppingBasketIcon />
     </Fragment>
   );
 };
